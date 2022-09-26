@@ -696,6 +696,14 @@ class ConfigurationManager
         return false;
     }
 
+    public function getNextcloudStartupApps() : string {
+        $apps = getenv('NEXTCLOUD_STARTUP_APPS');
+        if (is_string($apps)) {
+            return $apps;
+        }
+        return 'twofactor_totp deck tasks calendar contacts apporder';
+    }
+
     public function GetCollaboraDictionaries() : string {
         $config = $this->GetConfig();
         if(!isset($config['collabora_dictionaries'])) {

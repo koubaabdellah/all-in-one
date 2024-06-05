@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20220922
+FROM ubuntu:focal-20240530
 
 RUN set -ex; \
     \
